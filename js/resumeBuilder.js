@@ -27,7 +27,7 @@ var bio = {
     "location" : "Colorado Springs, Colorado"
   },
   "welcomeMessage" : "You have reached the internet resume of Blake Gould",
-  "skills" : "", // array of strings here
+  "skills" : "", // array of strings goes here
   "biopic" : "images/headshot.jpg",
   "display" : "" // function goes here
 };
@@ -36,17 +36,19 @@ var education = {
   "schools" : [
     {
       "name" : "Washington State University",
-      "city" : "Pullman, WA",
-      "Major" : "B. A. Criminal Justice",
-      "Minor" : "None",
-      "graduationYear" : "2011"
+      "location" : "Pullman, WA",
+      "degree" : "Bachelor of Arts",
+      "Majors" : "Criminal Justice",
+      "dates" : "2011",
+      "url" : "" // string goes here
     },
     {
       "name" : "Marian University",
-      "city" : "Indianapolis, IN",
-      "Major" : "M.A. Teaching Mathematics",
-      "Minor" : "None",
-      "graduationYear" : "2013"
+      "location" : "Indianapolis, IN",
+      "degree" : "Master of Arts",
+      "major" : "Teaching Mathematics",
+      "dates" : "2013",
+      "url" : "" // string goes here
     }
   ]
 };
