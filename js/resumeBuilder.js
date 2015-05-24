@@ -58,12 +58,14 @@ var work = {
     {
       "employer" : "Indianapolis Public Schools",
       "title" : "Athletic Director",
+      "location" : "Indianapolis, Indiana",
       "dates" : "August 2013-June 2013",
       "description" : "Managed staff of coaches and trainers, scheduled events and transportation, managed budget and fundraising."
     },
     {
       "employer" : "Harshman Magnet Middle School",
       "title" : "Math Interventionist/Data Specialist",
+      "location" : "Indianapolis, Indiana",
       "dates" : "August 2013-June 2013",
       "description" : "Collected and analyzed assessment data school wide to identify candidates for intervention. Developed and performed interventions."
     }
