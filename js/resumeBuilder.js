@@ -19,13 +19,17 @@
 var bio = {
   "name" : "Blake Gould",
   "role" : "Web Developer",
-  "contactInfo" : {
+  "contacts" : {
+    "mobile" : "317-759-1026",
     "email" : "gouldbf@gmail.com",
     "github" : "gouldbf",
-    "twitter" : "@Gould_BF"
+    "twitter" : "@Gould_BF",
+    "location" : "Colorado Springs, Colorado"
   },
-  "welcome" : "You have reached the internet resume of Blake Gould",
-  "headshot" : "images/headshot.jpg"
+  "welcomeMessage" : "You have reached the internet resume of Blake Gould",
+  "skills" : "", // array of strings here
+  "biopic" : "images/headshot.jpg",
+  "display" : "" // function goes here
 };
 
 var education = {
