@@ -27,7 +27,7 @@ var bio = {
     "location" : "Colorado Springs, Colorado"
   },
   "welcomeMessage" : "You have reached the internet resume of Blake Gould",
-  "skills" : "", // array of strings goes here
+  "skills" : ["Python", "Teaching", "Mathematics", "Policing"],
   "biopic" : "images/headshot.jpg",
   "display" : "" // function goes here
 };
@@ -38,9 +38,9 @@ var education = {
       "name" : "Washington State University",
       "location" : "Pullman, WA",
       "degree" : "Bachelor of Arts",
-      "Majors" : "Criminal Justice",
+      "majors" : "Criminal Justice",
       "dates" : "2011",
-      "url" : "" // string goes here
+      "url" : "http://www.wsu.edu"
     },
     {
       "name" : "Marian University",
@@ -48,7 +48,7 @@ var education = {
       "degree" : "Master of Arts",
       "major" : "Teaching Mathematics",
       "dates" : "2013",
-      "url" : "" // string goes here
+      "url" : ""
     }
   ]
 };
@@ -94,3 +94,35 @@ var projects = {
     }
   ]
 };
+
+if (bio.skills.length >0) {
+  $("#header").append(HTMLskillsStart);
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+  $("#skills").append(formattedSkill);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
