@@ -95,28 +95,27 @@ var projects = {
   ]
 };
 
-if (bio.skills.length >0) {
-  $("#header").append(HTMLskillsStart);
-
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-  $("#skills").append(formattedSkill);
-}
-
-
-// for (skill in bio.skills) {
+// if (bio.skills.length >0) {
 //   $("#header").append(HTMLskillsStart);
 
-//   var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+//   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+//   $("#skills").append(formattedSkill);
+// };
 
-//   $("#skills:last").append(
-//     formattedSkill);
-// }
+$("#header").append(HTMLskillsStart);
+for (skill in bio.skills) {
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+
+  $("#skills:last").append(
+    formattedSkill);
+};
 
 function displayWork() {
   for (job in work.jobs) {
