@@ -7,14 +7,12 @@
 
 // $("#main").append(bio.name);
 
-// var education = {};
 // education["recentSchoolName"] = "Marian University";
 // education["recentSchoolYears"] = "2 Years";
 // education["recentSchoolCity"] = "Indianapolis";
 
 // $("#main").append(work["position"]);
 // $("#main").append(education.recentSchoolCity);
-// Even though work and education were defined with dot and bracket notation, they can still be called with their counterpart. Cool! Is this because there are no classes, only objects and and object is an object regardless of what notation was used to define it?
 
 var bio = {
   "name" : "Blake Gould",
@@ -38,7 +36,7 @@ var education = {
       "name" : "Washington State University",
       "location" : "Pullman, WA",
       "degree" : "Bachelor of Arts",
-      "majors" : "Criminal Justice",
+      "major" : "Criminal Justice",
       "dates" : "2011",
       "url" : "http://www.wsu.edu"
     },
@@ -95,18 +93,6 @@ var projects = {
   ]
 };
 
-// if (bio.skills.length >0) {
-//   $("#header").append(HTMLskillsStart);
-
-//   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-//   $("#skills").append(formattedSkill);
-//   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-//   $("#skills").append(formattedSkill);
-//   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-//   $("#skills").append(formattedSkill);
-//   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-//   $("#skills").append(formattedSkill);
-// };
 function displaySkills() {
   $("#header").append(HTMLskillsStart);
   for (skill in bio.skills) {
@@ -141,6 +127,47 @@ function displayWork() {
 
 displayWork();
 
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+  };
+};
+
+projects.display();
+
+function displayEducation() {
+  for (school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+    $(".education-entry:last").append(formattedSchoolName);
+
+    var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    $(".education-entry:last").append(formattedDegree);
+
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedSchoolDates);
+
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    $(".education-entry:last").append(formattedSchoolLocation);
+
+    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+    $(".education-entry:last").append(formattedMajor);
+
+
+  };
+};
+
+displayEducation();
 
 $(document).click(function(loc) {
   var x = loc.pageX;
@@ -159,22 +186,7 @@ function inName(namesString) {
   return name[0] +" "+name[1];
 }
 
-projects.display = function() {
-  for (project in projects.projects) {
-    $("#projects").append(HTMLprojectStart);
 
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    $(".project-entry:last").append(formattedTitle);
-
-    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-    $(".project-entry:last").append(formattedDates);
-
-    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-    $(".project-entry:last").append(formattedDescription);
-  }
-}
-
-projects.display();
 
 $("#mapDiv").append(googleMap);
 
