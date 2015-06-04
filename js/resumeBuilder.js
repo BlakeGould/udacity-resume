@@ -107,15 +107,18 @@ var projects = {
 //   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 //   $("#skills").append(formattedSkill);
 // };
+function displaySkills() {
+  $("#header").append(HTMLskillsStart);
+  for (skill in bio.skills) {
 
-$("#header").append(HTMLskillsStart);
-for (skill in bio.skills) {
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-
-  $("#skills:last").append(
-    formattedSkill);
+    $("#skills:last").append(
+      formattedSkill);
+  };
 };
+
+displaySkills();
 
 function displayWork() {
   for (job in work.jobs) {
