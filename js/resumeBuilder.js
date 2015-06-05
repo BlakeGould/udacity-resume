@@ -186,7 +186,7 @@ $(document).click(function(loc) {
 
 $("#mapDiv").append(googleMap);
 
-// $("#main").append(internationalizeButton);
+$("#main").append(internationalizeButton);
 
 // function inName(namesString) {
 //   name = name.trim().split(" ");
