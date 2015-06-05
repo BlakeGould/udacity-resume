@@ -77,7 +77,7 @@ var projects = {
   ]
 };
 
-function displayBio () {
+bio.display = function () {
   var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
   $("#header").prepend(formattedRole);
 
@@ -98,24 +98,19 @@ function displayBio () {
 
   var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
   $("#header").append(formattedBioPic);
-};
 
-displayBio();
-
-function displaySkills() {
   $("#header").append(HTMLskillsStart);
+
   for (skill in bio.skills) {
-
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-
     $("#skills").append(
       formattedSkill);
   };
 };
 
-displaySkills();
+bio.display();
 
-function displayWork() {
+work.display = function () {
   for (job in work.jobs) {
     // create new div for work experience
     $("#workExperience").append(HTMLworkStart);
@@ -134,7 +129,7 @@ function displayWork() {
   }
 };
 
-displayWork();
+work.display();
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -153,7 +148,7 @@ projects.display = function() {
 
 projects.display();
 
-function displayEducation() {
+education.display = function () {
   for (school in education.schools) {
     $("#education").append(HTMLschoolStart);
 
@@ -176,7 +171,7 @@ function displayEducation() {
   };
 };
 
-displayEducation();
+education.display();
 
 $(document).click(function(loc) {
   var x = loc.pageX;
@@ -195,6 +190,5 @@ function inName() {
 
   return name[0] +" "+name[1];
 }
-
 
 $("#main").append(internationalizeButton);
