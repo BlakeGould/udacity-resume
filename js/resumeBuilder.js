@@ -1,19 +1,3 @@
-// var formattedName = HTMLheaderName.replace("%data%", "Blake Gould");
-
-// var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-
-// $("#main").append(bio.name);
-
-// education["recentSchoolName"] = "Marian University";
-// education["recentSchoolYears"] = "2 Years";
-// education["recentSchoolCity"] = "Indianapolis";
-
-// $("#main").append(work["position"]);
-// $("#main").append(education.recentSchoolCity);
-
 var bio = {
   "name" : "Blake Gould",
   "role" : "Web Developer",
@@ -22,7 +6,7 @@ var bio = {
     "email" : "gouldbf@gmail.com",
     "github" : "gouldbf",
     "twitter" : "@Gould_BF",
-    "location" : "Colorado Springs, Colorado"
+    "location" : "Colorado Springs"
   },
   "welcomeMessage" : "You have reached the internet resume of Blake Gould",
   "skills" : ["Python", "Teaching", "Mathematics", "Policing"],
@@ -93,13 +77,35 @@ var projects = {
   ]
 };
 
+function displayBio () {
+  var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+  $("#header").prepend(formattedRole);
+
+  var formattedName = HTMLheaderName.replace("%data%", "Blake Gould");
+  $("#header").prepend(formattedName);
+
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  $("#topContacts").append(formattedEmail);
+
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  $("#topContacts").append(formattedGithub);
+
+  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  $("#topContacts").append(formattedLocation);
+
+  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  $("#header").append(formattedBioPic);
+};
+
+displayBio();
+
 function displaySkills() {
   $("#header").append(HTMLskillsStart);
   for (skill in bio.skills) {
 
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 
-    $("#skills:last").append(
+    $("#skills").append(
       formattedSkill);
   };
 };
@@ -123,7 +129,7 @@ function displayWork() {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
   }
-}
+};
 
 displayWork();
 
@@ -176,24 +182,21 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
-$("#main").append(internationalizeButton);
-
-function inName(namesString) {
-  name = name.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0.1).toUpperCase() + name[0].slice(1).toLowerCase();
-  return name[0] +" "+name[1];
-}
-
 
 
 $("#mapDiv").append(googleMap);
 
+// $("#main").append(internationalizeButton);
 
+// function inName(namesString) {
+//   name = name.trim().split(" ");
+//   console.log(name);
+//   name[1] = name[1].toUpperCase();
+//   name[0] = name[0].slice(0.1).toUpperCase() + name[0].slice(1).toLowerCase();
+//   return name[0] +" "+name[1];
+// };
 
-
-
+// $(internationalizeButton).click(inName(formattedName));
 
 
 
