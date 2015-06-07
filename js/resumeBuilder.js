@@ -11,7 +11,7 @@ var bio = {
   "welcomeMessage" : "You have reached the internet resume of Blake Gould",
   "skills" : ["Python", "Teaching", "Mathematics", "Policing"],
   "biopic" : "images/headshot.jpg",
-  "display" : "" // function goes here
+  "display" : ""
 };
 
 var education = {
@@ -103,9 +103,8 @@ bio.display = function () {
 
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-    $("#skills").append(
-      formattedSkill);
-  };
+    $("#skills").append(formattedSkill);
+  }
 };
 
 bio.display();
@@ -143,7 +142,7 @@ projects.display = function() {
 
     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedDescription);
-  };
+  }
 };
 
 projects.display();
@@ -166,9 +165,7 @@ education.display = function () {
 
     var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
     $(".education-entry:last").append(formattedMajor);
-
-
-  };
+  }
 };
 
 education.display();
